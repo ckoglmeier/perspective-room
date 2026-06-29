@@ -186,4 +186,4 @@ The export script copies only the public package allowlist from `packages/room-s
 
 ## License
 
-Apache-2.0
+MIT
