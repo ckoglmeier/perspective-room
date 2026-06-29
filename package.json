@@ -1,0 +1,11 @@
+{
+  "name": "@perspective/room-standard",
+  "version": "0.1.0",
+  "description": "Open standard for AI-native fundraising bundles.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  }
+}

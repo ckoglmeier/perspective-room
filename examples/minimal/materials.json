@@ -1,0 +1,15 @@
+{
+  "schema_version": "perspective_room_materials.v1",
+  "room_id": "example-minimal",
+  "materials": [
+    {
+      "id": "seed-deck",
+      "display_name": "Seed deck",
+      "filename": "northstar-seed-deck.pdf",
+      "material_kind": "pitch_deck",
+      "listed_in_manifest": true,
+      "included_in_bundle": false,
+      "external_access_required": true
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "perspective_room.v1",
+  "room_id": "example-minimal",
+  "title": "Northstar Robotics Seed Room",
+  "bundle_mode": "metadata_only",
+  "company": {
+    "name": "Northstar Robotics",
+    "website": "https://example.com",
+    "one_line_summary": "Northstar builds inspection robots for aging industrial sites."
+  },
+  "round": {
+    "stage": "Seed",
+    "size": "$2.4M",
+    "objective": "Evaluate whether the inspection wedge can expand into a maintenance platform."
+  },
+  "narrative": {
+    "authored_by": "founder",
+    "status": "founder_approved",
+    "current_story": "Northstar Robotics helps industrial operators inspect high-risk sites without sending technicians into unsafe areas.",
+    "primary_ask": "Invest in the seed round."
+  },
+  "claims": [
+    {
+      "claim": "Three pilot customers have completed paid inspections.",
+      "authored_by": "founder",
+      "status": "needs_source",
+      "risk": "medium",
+      "evidence": "Founder says pilots are complete; source contracts are not included in this example."
+    }
+  ],
+  "materials": [
+    {
+      "id": "seed-deck",
+      "display_name": "Seed deck",
+      "filename": "northstar-seed-deck.pdf",
+      "material_kind": "pitch_deck",
+      "listed_in_manifest": true,
+      "included_in_bundle": false,
+      "external_access_required": true
+    }
+  ]
+}
