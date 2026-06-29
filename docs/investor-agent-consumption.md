@@ -49,10 +49,10 @@ If `sensitive` is true, do not redistribute the material without the founder's e
 
 Agents consuming a room should:
 
-- identify the company, round, primary ask, materials, claims, and missing context
+- identify the company, round context, materials, claims, access boundaries, and version signals
 - preserve trust fields in summaries
 - cite material IDs when using sourced claims
-- flag `needs_source`, `outdated`, and missing materials as follow-up items
+- preserve `needs_source`, `outdated`, and gated-material status without turning them into diligence conclusions
 - ask for access when a material is gated
 - avoid turning the room into an investment recommendation without investor criteria
 

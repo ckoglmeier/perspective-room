@@ -75,10 +75,6 @@ export function renderAgentMarkdown(room: PerspectiveRoom) {
     '',
     ...materialLines(room.materials ?? []),
     '',
-    '## Missing Context',
-    '',
-    ...listLines(room.missing_context, 'No missing context listed.'),
-    '',
     '## Self-Hosting Notice',
     '',
     room.self_hosting_notice || defaultSelfHostingNotice(),
@@ -216,10 +212,6 @@ function renderMaterialHtml(material: RoomMaterial) {
   ${material.description ? `<p>${escapeHtml(material.description)}</p>` : ''}
   ${href ? `<p><a href="${escapeAttribute(href)}">${escapeHtml(material.filename || 'Open material')}</a></p>` : ''}
 </article>`
-}
-
-function listLines(values: string[] | undefined, fallback: string) {
-  return values?.length ? values.map((value) => `- ${value}`) : [`- ${fallback}`]
 }
 
 function sourceSummary(sources: unknown) {

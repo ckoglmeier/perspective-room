@@ -90,13 +90,10 @@ export type PerspectiveRoom = {
   narrative?: RoomTrustState & {
     current_story?: string
     primary_ask?: string
-    must_prove?: string[]
-    must_not_overclaim?: string[]
   }
   claims?: RoomClaim[]
   materials?: RoomMaterial[]
   founders?: RoomFounder[]
-  missing_context?: string[]
   links?: {
     human_url?: string
     agent_url?: string

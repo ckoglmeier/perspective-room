@@ -23,16 +23,7 @@
     "authored_by": "founder",
     "status": "founder_approved",
     "current_story": "Northstar Robotics helps industrial operators inspect high-risk sites without sending technicians into unsafe areas.",
-    "primary_ask": "Invest in the seed round.",
-    "must_prove": [
-      "Paid pilots convert into repeat inspections.",
-      "The robot can operate in the target industrial environments.",
-      "Inspection data can become the wedge into maintenance workflows."
-    ],
-    "must_not_overclaim": [
-      "Do not represent pilots as annual contracts.",
-      "Do not imply full maintenance automation is already live."
-    ]
+    "primary_ask": "Invest in the seed round."
   },
   "claims": [
     {
@@ -125,11 +116,6 @@
       "external_access_required": true,
       "sensitive": true
     }
-  ],
-  "missing_context": [
-    "Repeat inspection revenue by customer",
-    "June model source file access",
-    "Customer interview notes supporting the maintenance workflow expansion claim"
   ],
   "self_hosting_notice": "This static bundle includes public-safe materials only. Gated model files are listed in the manifest and require separate access."
 }

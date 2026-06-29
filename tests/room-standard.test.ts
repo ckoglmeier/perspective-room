@@ -165,7 +165,6 @@ describe('Perspective Room Standard', () => {
     expect(cases).toEqual(expect.arrayContaining([
       'preserve-claim-status.json',
       'gated-materials.json',
-      'missing-context.json',
       'do-not-flatten-trust-status.json',
     ]))
 

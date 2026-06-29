@@ -4,11 +4,11 @@ Open standard for AI-native fundraising bundles.
 
 Fundraising is becoming agent-mediated.
 
-Investors still need judgment, relationships, and conviction. But the work around the first read is changing: parsing decks, extracting claims, routing opportunities, preparing memos, updating CRMs, and generating diligence questions.
+Investors still need judgment, relationships, and conviction. But the work around the first read is changing: parsing decks, extracting claims, routing opportunities, preparing memos, and updating CRMs.
 
 Founders need a way to participate in that system directly.
 
-A Perspective Room is a founder-controlled fundraising bundle. It gives investors a human-readable room and an agent-readable package with the company story, source materials, claims, trust status, and open questions.
+A Perspective Room is a founder-controlled fundraising bundle. It gives investors a human-readable room and an agent-readable package with the company story, round context, source materials, claim status, access boundaries, and version signals.
 
 The goal is simple: founders should define the machine-readable version of their company before investor-side software does it for them.
 
@@ -37,7 +37,7 @@ room/
 
 Agents need structured context. Founders need narrative control. Investors need source traceability.
 
-A normal data room stores files. A Perspective Room packages the fundraising read: what the company is, what round it is raising, what claims it is making, what materials support those claims, and what still needs work.
+A normal data room stores files. A Perspective Room packages the fundraising read: what the company is, what round it is raising, what claims it is making, what materials support those claims, and which materials are current or gated.
 
 That makes the room useful in three places:
 
@@ -94,9 +94,9 @@ Agents should treat the bundle as founder-provided context.
 
 Good agent behavior:
 
-- Identify the company, round, primary ask, materials, claims, and missing context.
+- Identify the company, round context, materials, claims, access boundaries, and version signals.
 - Preserve trust fields in summaries.
-- Flag `needs_source`, `outdated`, and missing materials as follow-up items.
+- Preserve `needs_source`, `outdated`, and gated-material status without turning them into diligence conclusions.
 - Cite material IDs when using claims supported by source files.
 - Ask for access when a material is metadata-only.
 
