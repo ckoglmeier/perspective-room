@@ -1,0 +1,43 @@
+name: Standard Proposal
+description: Propose a change to the Perspective Room standard.
+title: "[Proposal]: "
+labels:
+  - standard
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow
+      description: What founder, investor, or agent workflow needs this change?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed Change
+      description: Describe the field, behavior, document, or validation rule you want to add or change.
+    validations:
+      required: true
+  - type: textarea
+    id: json-example
+    attributes:
+      label: JSON Example
+      description: Show the smallest useful room or field example.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility
+      description: How should existing consumers behave if the field is absent?
+    validations:
+      required: true
+  - type: checkboxes
+    id: updates
+    attributes:
+      label: Expected Updates
+      options:
+        - label: This likely needs an example update.
+        - label: This likely needs a docs update.
+        - label: This likely needs an agent-readiness eval update.

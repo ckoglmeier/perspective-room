@@ -1,0 +1,39 @@
+name: Bug Report
+description: Report a schema, validation, rendering, docs, or package issue.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include a minimal room snippet, command, or link to a public reproduction.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Package version, schema version, or commit.
+  - type: checkboxes
+    id: sensitive
+    attributes:
+      label: Sensitive Data Check
+      options:
+        - label: I have removed confidential company, customer, investor, credential, and financial data.
+          required: true

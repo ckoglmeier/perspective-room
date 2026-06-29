@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 
 import { describe, expect, it } from 'vitest'
@@ -156,5 +156,33 @@ describe('Perspective Room Standard', () => {
     expect(html).toContain('href="./room.json"')
     expect(html).toContain('href="./agent.md"')
     expect(html).toContain('href="./materials.json"')
+  })
+
+  it('keeps agent-readiness eval fixtures well formed', () => {
+    const casesDir = join(process.cwd(), 'evals/agent-readiness/cases')
+    const cases = readdirSync(casesDir).filter((file) => file.endsWith('.json'))
+
+    expect(cases).toEqual(expect.arrayContaining([
+      'preserve-claim-status.json',
+      'gated-materials.json',
+      'missing-context.json',
+      'do-not-flatten-trust-status.json',
+    ]))
+
+    for (const file of cases) {
+      const evaluation = readJson<{
+        name: string
+        input: string
+        prompt: string
+        required_behaviors: string[]
+        forbidden_behaviors: string[]
+      }>(`evals/agent-readiness/cases/${file}`)
+
+      expect(evaluation.name).toBeTruthy()
+      expect(evaluation.input).toBe('../../examples/full-seed-room/room.json')
+      expect(evaluation.prompt).toBeTruthy()
+      expect(evaluation.required_behaviors.length).toBeGreaterThan(0)
+      expect(evaluation.forbidden_behaviors.length).toBeGreaterThan(0)
+    }
   })
 })

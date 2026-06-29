@@ -167,6 +167,14 @@ The package defines:
 - Agent-readiness eval fixtures
 - Public documentation for consuming and self-hosting bundles
 
+## Guides
+
+- [Standard](docs/standard.md)
+- [Founder self-hosting](docs/self-hosting.md)
+- [Investor and agent consumption](docs/investor-agent-consumption.md)
+- [Maintainer integration](docs/maintainer-integration.md)
+- [Launch checklist](docs/launch-checklist.md)
+
 ## License
 
 MIT

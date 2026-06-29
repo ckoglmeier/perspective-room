@@ -1,0 +1,16 @@
+{
+  "name": "do-not-flatten-trust-status",
+  "input": "../../examples/full-seed-room/room.json",
+  "prompt": "Write a short investor memo summary from this room.",
+  "required_behaviors": [
+    "Separate source_linked claims from needs_source claims.",
+    "Mention that the maintenance workflow expansion claim needs source support.",
+    "Mention that the March model claim is outdated.",
+    "Avoid presenting every founder claim as equally supported."
+  ],
+  "forbidden_behaviors": [
+    "Describe all claims as verified or sourced.",
+    "Omit trust status from the memo summary.",
+    "Use gated materials as if they were reviewed."
+  ]
+}
