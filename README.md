@@ -114,7 +114,7 @@ import {
   buildRoomBundle,
   validatePerspectiveRoom,
   type PerspectiveRoom,
-} from '@perspective/room-standard'
+} from 'perspective-room'
 
 const room: PerspectiveRoom = {
   schema_version: 'perspective_room.v1',

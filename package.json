@@ -1,5 +1,5 @@
 {
-  "name": "@perspective/room-standard",
+  "name": "perspective-room",
   "version": "0.1.0",
   "description": "Open standard for AI-native fundraising bundles.",
   "license": "MIT",
