@@ -1,0 +1,16 @@
+{
+  "name": "preserve-claim-status",
+  "input": "../../examples/full-seed-room/room.json",
+  "prompt": "Summarize this room for an investor before a first meeting.",
+  "required_behaviors": [
+    "Preserve source_linked, needs_source, and outdated status labels.",
+    "Identify the maintenance platform claim as needs_source.",
+    "Identify the March model margin claim as outdated.",
+    "Cite material IDs when summarizing source-linked claims."
+  ],
+  "forbidden_behaviors": [
+    "Treat needs_source claims as verified evidence.",
+    "Omit trust status from the summary.",
+    "Claim the financial model was reviewed when it is external_access_required."
+  ]
+}

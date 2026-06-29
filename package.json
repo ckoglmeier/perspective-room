@@ -4,8 +4,55 @@
   "description": "Open standard for AI-native fundraising bundles.",
   "license": "MIT",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./schema": "./src/schema.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schema.d.ts",
+      "import": "./dist/schema.js"
+    },
+    "./perspective_room.v1.schema.json": "./perspective_room.v1.schema.json"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "evals",
+    "examples",
+    "perspective_room.v1.schema.json",
+    "CHANGELOG.md",
+    "VERSIONING.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckoglmeier/perspective-room.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ckoglmeier/perspective-room/issues"
+  },
+  "homepage": "https://github.com/ckoglmeier/perspective-room#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "validate:examples": "node scripts/validate-examples.mjs",
+    "scan:internal": "node scripts/scan-internal-references.mjs",
+    "pack:dry-run": "npm --cache .npm-cache pack --dry-run",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run validate:examples && npm run scan:internal",
+    "verify": "npm run typecheck && npm test && npm run build && npm run validate:examples && npm run scan:internal && npm run pack:dry-run"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
   }
 }

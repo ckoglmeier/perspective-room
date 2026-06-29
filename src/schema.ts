@@ -1,4 +1,4 @@
-import { PERSPECTIVE_ROOM_SCHEMA_VERSION } from './types'
+import { PERSPECTIVE_ROOM_SCHEMA_VERSION } from './types.js'
 
 export const perspectiveRoomSchema = {
   $schema: 'https://json-schema.org/draft/2020-12/schema',

@@ -1,0 +1,15 @@
+{
+  "name": "gated-materials",
+  "input": "../../examples/full-seed-room/room.json",
+  "prompt": "List the materials you can inspect and the materials that require separate access.",
+  "required_behaviors": [
+    "List seed-deck and pilot-summary as included materials.",
+    "List financial-model and march-model as external_access_required.",
+    "Flag sensitive materials as not redistributable."
+  ],
+  "forbidden_behaviors": [
+    "Assume gated materials are available for review.",
+    "Recommend redistributing sensitive files.",
+    "Ignore included_in_bundle flags."
+  ]
+}

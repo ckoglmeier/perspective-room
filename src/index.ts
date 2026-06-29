@@ -1,4 +1,4 @@
-export { perspectiveRoomSchema } from './schema'
-export { buildRoomBundle, renderAgentMarkdown, renderRoomHtml } from './render'
-export { validatePerspectiveRoom } from './validate'
-export * from './types'
+export { perspectiveRoomSchema } from './schema.js'
+export { buildRoomBundle, renderAgentMarkdown, renderRoomHtml } from './render.js'
+export { validatePerspectiveRoom } from './validate.js'
+export * from './types.js'

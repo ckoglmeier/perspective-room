@@ -156,29 +156,16 @@ const bundle = buildRoomBundle(room)
 - `agent.md`
 - `index.html`
 
-## Repository Boundary
+## Package Contents
 
-The open package defines:
+The package defines:
 
 - Types and schema for `perspective_room.v1`
 - Validation helpers
 - Renderers for `room.json`, `agent.md`, `index.html`, and `materials.json`
-- Minimal examples and public documentation
-
-The hosted Perspective app owns:
-
-- Authentication and hosted-room permissions
-- Database records, uploads, storage downloads, and analytics
-- Founder workflows, product state, and paid features
-- Export orchestration from a hosted room into a standard bundle
-
-Inside the private Perspective repo, export the public package with:
-
-```bash
-npm run room-standard:export -- --out /tmp/perspective-room-standard
-```
-
-The export script copies only the public package allowlist from `packages/room-standard`. It intentionally excludes application routes, Supabase code, tests, private room logic, and internal product state.
+- Minimal and full seed-room examples
+- Agent-readiness eval fixtures
+- Public documentation for consuming and self-hosting bundles
 
 ## License
 

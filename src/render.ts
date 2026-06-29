@@ -1,5 +1,5 @@
-import { validatePerspectiveRoom } from './validate'
-import type { PerspectiveRoom, RoomBundle, RoomBundleFile, RoomMaterial } from './types'
+import { validatePerspectiveRoom } from './validate.js'
+import type { PerspectiveRoom, RoomBundle, RoomBundleFile, RoomMaterial } from './types.js'
 
 export function buildRoomBundle(room: PerspectiveRoom): RoomBundle {
   const validation = validatePerspectiveRoom(room)

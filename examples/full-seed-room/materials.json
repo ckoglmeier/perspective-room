@@ -1,0 +1,36 @@
+{
+  "schema_version": "perspective_room_materials.v1",
+  "room_id": "example-full-seed-room",
+  "materials": [
+    {
+      "id": "seed-deck",
+      "display_name": "Seed deck",
+      "local_path": "materials/northstar-seed-deck.md",
+      "included_in_bundle": true,
+      "external_access_required": false,
+      "sensitive": false
+    },
+    {
+      "id": "pilot-summary",
+      "display_name": "Pilot customer summary",
+      "local_path": "materials/pilot-summary.md",
+      "included_in_bundle": true,
+      "external_access_required": false,
+      "sensitive": false
+    },
+    {
+      "id": "financial-model",
+      "display_name": "Financial model",
+      "included_in_bundle": false,
+      "external_access_required": true,
+      "sensitive": true
+    },
+    {
+      "id": "march-model",
+      "display_name": "March financial model",
+      "included_in_bundle": false,
+      "external_access_required": true,
+      "sensitive": true
+    }
+  ]
+}

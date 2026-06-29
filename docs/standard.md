@@ -80,20 +80,13 @@ Static bundles can be hosted on GitHub Pages, S3, Netlify, Vercel, Cloudflare Pa
 
 `hybrid` includes public-safe materials and marks gated materials as externally required. Use it when the room should be useful immediately while still preserving private-file boundaries.
 
-## Open Source Boundary
+## Package Boundary
 
-The open package defines:
+The package defines:
 
 - Types and schema for `perspective_room.v1`.
 - Validation helpers.
 - Renderers for `index.html`, `agent.md`, and `materials.json`.
-- Minimal examples and public documentation.
-
-The private Perspective app owns:
-
-- Authentication and hosted-room permissions.
-- Database records, uploads, storage downloads, and analytics.
-- Founder workflows, product state, and paid features.
-- Export orchestration from a hosted room into a standard bundle.
-
-This separation lets the standard become public infrastructure while the hosted product can keep improving on workflow, distribution, access control, analytics, and collaboration.
+- Minimal and full seed-room examples.
+- Agent-readiness eval fixtures.
+- Public documentation for consuming and self-hosting bundles.

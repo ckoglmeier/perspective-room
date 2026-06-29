@@ -1,0 +1,135 @@
+{
+  "schema_version": "perspective_room.v1",
+  "room_id": "example-full-seed-room",
+  "title": "Northstar Robotics Full Seed Room",
+  "bundle_mode": "hybrid",
+  "created_at": "2026-06-29T00:00:00.000Z",
+  "updated_at": "2026-06-29T00:00:00.000Z",
+  "company": {
+    "name": "Northstar Robotics",
+    "website": "https://example.com",
+    "one_line_summary": "Northstar builds inspection robots for aging industrial sites."
+  },
+  "contact": {
+    "name": "Avery Chen",
+    "email": "founder@example.com"
+  },
+  "round": {
+    "stage": "Seed",
+    "size": "$2.4M",
+    "objective": "Evaluate whether the inspection wedge can expand into a maintenance platform."
+  },
+  "narrative": {
+    "authored_by": "founder",
+    "status": "founder_approved",
+    "current_story": "Northstar Robotics helps industrial operators inspect high-risk sites without sending technicians into unsafe areas.",
+    "primary_ask": "Invest in the seed round.",
+    "must_prove": [
+      "Paid pilots convert into repeat inspections.",
+      "The robot can operate in the target industrial environments.",
+      "Inspection data can become the wedge into maintenance workflows."
+    ],
+    "must_not_overclaim": [
+      "Do not represent pilots as annual contracts.",
+      "Do not imply full maintenance automation is already live."
+    ]
+  },
+  "claims": [
+    {
+      "id": "claim-paid-pilots",
+      "claim": "Three pilot customers have completed paid inspections.",
+      "authored_by": "founder",
+      "status": "source_linked",
+      "risk": "low",
+      "evidence": "The seed deck and pilot summary both list three completed paid inspections.",
+      "sources": [
+        { "material_id": "seed-deck", "page": "7", "note": "Pilot customer summary" },
+        { "material_id": "pilot-summary", "note": "Completed pilot list" }
+      ]
+    },
+    {
+      "id": "claim-maintenance-platform",
+      "claim": "Inspection data can expand into a maintenance workflow platform.",
+      "authored_by": "founder",
+      "status": "needs_source",
+      "risk": "medium",
+      "evidence": "Founder hypothesis based on customer interviews; source notes are not included."
+    },
+    {
+      "id": "claim-old-margin",
+      "claim": "Hardware gross margin reached 42 percent in the March model.",
+      "authored_by": "founder",
+      "status": "outdated",
+      "risk": "high",
+      "evidence": "The March model has been superseded by the June model."
+    }
+  ],
+  "materials": [
+    {
+      "id": "seed-deck",
+      "display_name": "Seed deck",
+      "filename": "northstar-seed-deck.md",
+      "material_kind": "pitch_deck",
+      "content_type": "text/markdown",
+      "version_label": "June 2026",
+      "is_current_version": true,
+      "authored_by": "founder",
+      "status": "source_linked",
+      "included_in_bundle": true,
+      "listed_in_manifest": true,
+      "local_path": "materials/northstar-seed-deck.md",
+      "external_access_required": false,
+      "sensitive": false
+    },
+    {
+      "id": "pilot-summary",
+      "display_name": "Pilot customer summary",
+      "filename": "pilot-summary.md",
+      "material_kind": "customer_evidence",
+      "content_type": "text/markdown",
+      "version_label": "June 2026",
+      "is_current_version": true,
+      "authored_by": "founder",
+      "status": "source_linked",
+      "included_in_bundle": true,
+      "listed_in_manifest": true,
+      "local_path": "materials/pilot-summary.md",
+      "external_access_required": false,
+      "sensitive": false
+    },
+    {
+      "id": "financial-model",
+      "display_name": "Financial model",
+      "filename": "northstar-model.xlsx",
+      "material_kind": "financial_model",
+      "version_label": "June 2026",
+      "is_current_version": true,
+      "authored_by": "founder",
+      "status": "source_linked",
+      "included_in_bundle": false,
+      "listed_in_manifest": true,
+      "external_access_required": true,
+      "sensitive": true
+    },
+    {
+      "id": "march-model",
+      "display_name": "March financial model",
+      "filename": "northstar-model-march.xlsx",
+      "material_kind": "financial_model",
+      "version_label": "March 2026",
+      "is_current_version": false,
+      "authored_by": "founder",
+      "status": "outdated",
+      "included_in_bundle": false,
+      "listed_in_manifest": true,
+      "external_access_required": true,
+      "sensitive": true
+    }
+  ],
+  "missing_context": [
+    "Repeat inspection revenue by customer",
+    "June model source file access",
+    "Customer interview notes supporting the maintenance workflow expansion claim"
+  ],
+  "self_hosting_notice": "This static bundle includes public-safe materials only. Gated model files are listed in the manifest and require separate access."
+}

@@ -2,11 +2,13 @@ import {
   PERSPECTIVE_ROOM_SCHEMA_VERSION,
   type PerspectiveRoom,
   type RoomAuthor,
+  type RoomBundleMode,
   type RoomTrustStatus,
   type RoomValidationResult,
-} from './types'
+} from './types.js'
 
 const AUTHORS = new Set<RoomAuthor>(['founder', 'perspective', 'third_party', 'unknown'])
+const BUNDLE_MODES = new Set<RoomBundleMode>(['public', 'metadata_only', 'hybrid'])
 const STATUSES = new Set<RoomTrustStatus>([
   'draft',
   'founder_approved',
@@ -27,6 +29,9 @@ export function validatePerspectiveRoom(value: unknown): RoomValidationResult {
   }
   if (!nonEmpty(value.room_id)) errors.push('room_id is required')
   if (!nonEmpty(value.title)) errors.push('title is required')
+  if (value.bundle_mode && !BUNDLE_MODES.has(value.bundle_mode as RoomBundleMode)) {
+    errors.push(`bundle_mode has invalid value ${value.bundle_mode}`)
+  }
 
   const room = value as PerspectiveRoom
   validateTrustBlock('narrative', room.narrative, errors, warnings)
