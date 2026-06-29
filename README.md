@@ -180,10 +180,6 @@ npm run room-standard:export -- --out /tmp/perspective-room-standard
 
 The export script copies only the public package allowlist from `packages/room-standard`. It intentionally excludes application routes, Supabase code, tests, private room logic, and internal product state.
 
-## Status
-
-`perspective_room.v1` is an early standard. Expect additive changes as founder rooms, investor agents, and ingestion workflows get more real-world usage.
-
 ## License
 
 MIT
