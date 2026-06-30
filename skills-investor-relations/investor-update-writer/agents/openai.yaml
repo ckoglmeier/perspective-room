@@ -1,0 +1,4 @@
+interface:
+  display_name: "Investor Update Writer"
+  short_description: "Draft clear investor updates"
+  default_prompt: "Use $investor-update-writer to draft an investor update from these traction notes, asks, and room changes."

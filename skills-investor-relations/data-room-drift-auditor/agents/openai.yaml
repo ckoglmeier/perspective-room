@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data Room Drift Auditor"
+  short_description: "Find stale room materials"
+  default_prompt: "Use $data-room-drift-auditor to compare this investor room against the source materials and flag drift."

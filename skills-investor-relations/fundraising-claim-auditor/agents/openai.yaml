@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fundraising Claim Auditor"
+  short_description: "Audit fundraising claim evidence"
+  default_prompt: "Use $fundraising-claim-auditor to audit these fundraising claims against the available evidence."

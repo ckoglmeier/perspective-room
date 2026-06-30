@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fundraising Room Packager"
+  short_description: "Build investor-ready fundraising rooms"
+  default_prompt: "Use $fundraising-room-packager to turn these founder materials into a clean Perspective Room package."

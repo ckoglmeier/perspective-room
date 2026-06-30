@@ -1,0 +1,4 @@
+interface:
+  display_name: "Investor Relations"
+  short_description: "Coordinate fundraising materials"
+  default_prompt: "Use $investor-relations to reconcile this fundraising story across the deck, memo, model, room, and diligence materials."

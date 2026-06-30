@@ -22,6 +22,7 @@
     "docs",
     "evals",
     "examples",
+    "skills-investor-relations",
     "perspective_room.v1.schema.json",
     "SPEC.md",
     "CHANGELOG.md",
@@ -48,6 +49,7 @@
     "validate:examples": "node scripts/validate-examples.mjs",
     "scan:internal": "node scripts/scan-internal-references.mjs",
     "pack:dry-run": "npm --cache .npm-cache pack --dry-run",
+    "prepare": "npm run build",
     "prepack": "npm run build",
     "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run validate:examples && npm run scan:internal",
     "verify": "npm run typecheck && npm test && npm run build && npm run validate:examples && npm run scan:internal && npm run pack:dry-run"

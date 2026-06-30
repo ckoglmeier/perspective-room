@@ -121,7 +121,7 @@ After npm publish:
 npm install perspective-room
 ```
 
-Before npm publish, install from GitHub after the repository is public:
+Before npm publish, install from GitHub:
 
 ```bash
 npm install github:ckoglmeier/perspective-room
@@ -189,6 +189,18 @@ The open standard defines:
 - agent-readiness eval fixtures
 
 Perspective can build an intelligence layer on top: extraction, analysis, drift detection, investor-specific prep, routing, and room maintenance. Those are product capabilities, not requirements of the open standard.
+
+## Companion Skills
+
+This repo also includes companion investor-relations skills that help founders, operators, and agents produce higher-quality room artifacts:
+
+- `fundraising-room-packager`
+- `investor-relations`
+- `fundraising-claim-auditor`
+- `data-room-drift-auditor`
+- `investor-update-writer`
+
+Each skill lives under `skills-investor-relations/<skill-name>/SKILL.md`.
 
 ## Guides
 
