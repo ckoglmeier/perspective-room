@@ -1,5 +1,7 @@
 # Perspective Room Standard v0.1
 
+For the normative contract, see [`SPEC.md`](../SPEC.md). This guide explains the standard in operational terms.
+
 Perspective Rooms exist because fundraising is becoming agent-mediated.
 
 Investors still make the decision. But the work around the first read is changing: parsing decks, extracting claims, routing opportunities, preparing memos, and updating CRMs.

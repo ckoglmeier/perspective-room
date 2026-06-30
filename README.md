@@ -2,52 +2,68 @@
 
 Open standard for AI-native fundraising bundles.
 
+Perspective Room gives founders a portable fundraising package that humans and AI systems can read from the same source of truth.
+
+The core idea is simple: founders should define the machine-readable version of their company before investor-side software does it for them.
+
+## Why This Exists
+
 Fundraising is becoming agent-mediated.
 
-Investors still need judgment, relationships, and conviction. But the work around the first read is changing: parsing decks, extracting claims, routing opportunities, preparing memos, and updating CRMs.
+Investors still need judgment, relationships, and conviction. But the first read is changing. Deck parsing, claim extraction, routing, memo prep, and CRM updates are increasingly handled by software around the investor.
 
-Founders need a way to participate in that system directly.
+The old package was built for a person opening files one by one:
 
-A Perspective Room is a founder-controlled fundraising bundle. It gives investors a human-readable room and an agent-readable package with the company story, round context, source materials, claim status, access boundaries, and version signals.
+- a deck
+- a DocSend link
+- a folder of PDFs
+- a model
+- scattered answers in email
 
-The goal is simple: founders should define the machine-readable version of their company before investor-side software does it for them.
+That is not enough when the company is also being read by agents.
 
-## What The Bundle Contains
+A normal data room stores files. A Perspective Room packages the fundraising read: the company story, round context, materials, claim status, access boundaries, and version signals.
+
+It does not do the investor's work. It makes the founder's package legible to the humans and agents already doing it.
+
+## What Founders Share
 
 ```text
 room/
+  index.html
   room.json
   agent.md
-  index.html
   materials.json
   materials/
 ```
 
+`index.html` is the human-readable room.
+
 `room.json` is canonical. It is the structured, agent-readable room.
 
-`agent.md` is the text-first handoff for Claude, Codex, Radar, MCP-style clients, and other agent workflows.
-
-`index.html` is the human-readable room.
+`agent.md` is the text-first handoff for Claude Code, Codex, Cowork, Radar, MCP-style clients, and other agent workflows.
 
 `materials.json` is the material manifest.
 
-`materials/` is optional. It contains any files the founder chooses to include.
+`materials/` is optional. It contains only files the founder chooses to include in the portable bundle.
 
-## Why This Works
+## What This Is Not
 
-Agents need structured context. Founders need narrative control. Investors need source traceability.
+Perspective Room Standard is not:
 
-A normal data room stores files. A Perspective Room packages the fundraising read: what the company is, what round it is raising, what claims it is making, what materials support those claims, and which materials are current or gated.
+- investor diligence
+- an investment recommendation
+- a permissioning system
+- a replacement for investor relationships
+- a replacement for legal, financial, or late-stage diligence
+- a full virtual data room
+- a scoring layer
 
-That makes the room useful in three places:
+The open standard defines how fundraising context should be shared. Intelligence layers can be built on top.
 
-- A founder can self-host or share one current package.
-- An investor can read it in a browser.
-- An agent can ingest it without guessing at the structure.
+## Trust And Access Fields
 
-## Trust Fields
-
-The standard avoids overloaded provenance language. Claims and narrative blocks use plain trust fields:
+Claims and narrative blocks use plain trust fields:
 
 - `authored_by`: `founder`, `perspective`, `third_party`, or `unknown`
 - `status`: `draft`, `founder_approved`, `needs_source`, `source_linked`, or `outdated`
@@ -55,57 +71,61 @@ The standard avoids overloaded provenance language. Claims and narrative blocks 
 
 These fields are not diligence conclusions. They tell the reader how to treat the room package.
 
+Materials can also carry access fields:
+
+- `included_in_bundle`
+- `external_access_required`
+- `sensitive`
+- `is_current_version`
+- `version_label`
+
+A static bundle is portable. It is not permissioned. If a file requires identity capture, NDA, approval, revocation, or viewer tracking, leave it out of `materials/` and mark it `external_access_required`.
+
 ## Bundle Modes
 
-`metadata_only` includes the human page, `room.json`, `agent.md`, and `materials.json`. Source files are listed but not bundled.
+`metadata_only` includes `index.html`, `room.json`, `agent.md`, and `materials.json`. Source files are listed but not bundled.
 
 `public` includes the room files and source materials the founder has explicitly made safe to distribute.
 
 `hybrid` includes public-safe materials while marking private or gated materials as access-required.
 
-## Access Model
+## How An AI Harness Should Act
 
-A static bundle is portable. It is not permissioned.
+AI harnesses should treat a Perspective Room as founder-provided fundraising context, not as verified investor analysis.
 
-Included files are accessible to anyone with the ZIP or hosted bundle. If a file requires identity capture, NDA, approval, revocation, or viewer tracking, leave it out of `materials/` and mark it `external_access_required`.
+Good harness behavior:
 
-The minimum useful self-hosted bundle is:
+- Read `room.json` first when structured ingestion is available.
+- Use `agent.md` for text-first workflows and context windows.
+- Preserve `authored_by`, `status`, `sources`, `sensitive`, `external_access_required`, `included_in_bundle`, and version fields.
+- Keep `needs_source`, `source_linked`, and `outdated` distinct.
+- Cite material IDs when summarizing source-linked claims.
+- Say when a material is gated instead of implying it was reviewed.
+- Avoid turning the room into an investment recommendation unless the investor supplies decision criteria.
 
-```text
-room.json
-agent.md
-index.html
-materials.json
+Bad harness behavior:
+
+- Treating founder assertions as verified evidence.
+- Flattening `needs_source` and `source_linked` into the same confidence level.
+- Assuming omitted or gated materials do not exist.
+- Redistributing files marked `sensitive` or `external_access_required`.
+- Scoring the company without the user's explicit criteria.
+
+See [AI harness guide](docs/ai-harnesses.md) for Claude Code, Codex, Cowork, and npm usage.
+
+## Install
+
+After npm publish:
+
+```bash
+npm install perspective-room
 ```
 
-## Investor Consumption
+Before npm publish, install from GitHub after the repository is public:
 
-Read `index.html` first if you want the founder-facing room.
-
-Ingest `room.json` first if you are using an agent, parser, CRM workflow, or memo system. Preserve `authored_by`, `status`, `sources`, `sensitive`, and `external_access_required` in downstream summaries.
-
-Use `agent.md` when your tool works better with Markdown or one context document.
-
-Do not treat `needs_source` and `source_linked` as the same confidence level. Do not claim gated materials were reviewed when only metadata was available.
-
-## Agent Instructions
-
-Agents should treat the bundle as founder-provided context.
-
-Good agent behavior:
-
-- Identify the company, round context, materials, claims, access boundaries, and version signals.
-- Preserve trust fields in summaries.
-- Preserve `needs_source`, `outdated`, and gated-material status without turning them into diligence conclusions.
-- Cite material IDs when using claims supported by source files.
-- Ask for access when a material is metadata-only.
-
-Bad agent behavior:
-
-- Turning the room into an investment recommendation without investor criteria.
-- Treating a founder assertion as source-backed evidence.
-- Assuming omitted materials do not exist.
-- Redistributing files marked `sensitive` or `external_access_required`.
+```bash
+npm install github:ckoglmeier/perspective-room
+```
 
 ## Package Usage
 
@@ -156,22 +176,27 @@ const bundle = buildRoomBundle(room)
 - `agent.md`
 - `index.html`
 
-## Package Contents
+## Standard Boundary
 
-The package defines:
+The open standard defines:
 
-- Types and schema for `perspective_room.v1`
-- Validation helpers
-- Renderers for `room.json`, `agent.md`, `index.html`, and `materials.json`
-- Minimal and full seed-room examples
-- Agent-readiness eval fixtures
-- Public documentation for consuming and self-hosting bundles
+- required bundle files
+- schema and TypeScript types for `perspective_room.v1`
+- validation helpers
+- human and agent renderers
+- trust and access semantics
+- conformance examples
+- agent-readiness eval fixtures
+
+Perspective can build an intelligence layer on top: extraction, analysis, drift detection, investor-specific prep, routing, and room maintenance. Those are product capabilities, not requirements of the open standard.
 
 ## Guides
 
+- [Spec](SPEC.md)
 - [Standard](docs/standard.md)
 - [Founder self-hosting](docs/self-hosting.md)
 - [Investor and agent consumption](docs/investor-agent-consumption.md)
+- [AI harness guide](docs/ai-harnesses.md)
 - [Maintainer integration](docs/maintainer-integration.md)
 - [Launch checklist](docs/launch-checklist.md)
 
