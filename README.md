@@ -111,17 +111,11 @@ Bad harness behavior:
 - Redistributing files marked `sensitive` or `external_access_required`.
 - Scoring the company without the user's explicit criteria.
 
-See [AI harness guide](docs/ai-harnesses.md) for Claude Code, Codex, Cowork, and npm usage.
+See [AI harness guide](docs/ai-harnesses.md) for Claude Code, Codex, Cowork, and package usage.
 
-## Install
+## Install From GitHub
 
-After npm publish:
-
-```bash
-npm install perspective-room
-```
-
-Before npm publish, install from GitHub:
+Install the package directly from the public repository:
 
 ```bash
 npm install github:ckoglmeier/perspective-room

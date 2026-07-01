@@ -12,15 +12,9 @@ The harness should use the room as founder-provided fundraising context. It shou
 4. Read files in `materials/` only when `included_in_bundle` is true and a local file is present.
 5. Preserve gated-material status when `external_access_required` is true.
 
-## npm Usage
+## Package Usage
 
-After npm publish:
-
-```bash
-npm install perspective-room
-```
-
-Before npm publish, install from GitHub after the repository is public:
+Install the package directly from the public repository:
 
 ```bash
 npm install github:ckoglmeier/perspective-room
@@ -69,7 +63,7 @@ Do not make an investment recommendation unless I provide investor criteria.
 If building tooling around the room, install the package in the project:
 
 ```bash
-npm install perspective-room
+npm install github:ckoglmeier/perspective-room
 ```
 
 ## Codex
@@ -100,7 +94,7 @@ Do not infer that omitted materials do not exist.
 If building or validating room exports, install the package:
 
 ```bash
-npm install perspective-room
+npm install github:ckoglmeier/perspective-room
 ```
 
 ## Cowork
@@ -130,7 +124,7 @@ Do not redistribute or summarize sensitive files as reviewed when they are gated
 If Cowork is connected to a code workspace or package-aware environment, install:
 
 ```bash
-npm install perspective-room
+npm install github:ckoglmeier/perspective-room
 ```
 
 ## Harness Output Requirements

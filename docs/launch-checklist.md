@@ -6,7 +6,6 @@ Use this checklist when making the repository public and announcing the standard
 
 - Run `npm run verify`.
 - Confirm GitHub Actions passes on `main`.
-- Confirm `npm view perspective-room version` still returns not found.
 - Confirm the repository visibility is still private until launch timing is approved.
 - Review `README.md`, `SPEC.md`, `docs/standard.md`, `docs/self-hosting.md`, `docs/investor-agent-consumption.md`, and `docs/ai-harnesses.md`.
 - Review examples for invented data only.
@@ -19,14 +18,6 @@ Use this checklist when making the repository public and announcing the standard
 - Make the repository public.
 - Refresh `v0.1.0` so it points at the launch commit.
 - Publish release notes from `CHANGELOG.md`.
-
-## npm Launch
-
-- Confirm npm authentication and package ownership.
-- Run `npm run verify`.
-- Run `npm publish`.
-- Confirm `npm view perspective-room version` returns `0.1.0`.
-- Update README install instructions if needed.
 
 ## Announcement Check
 
