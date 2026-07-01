@@ -4,7 +4,9 @@ Open standard for AI-native fundraising bundles.
 
 Perspective Room gives founders a portable fundraising package that humans and AI systems can read from the same source of truth.
 
-The core idea is simple: founders should define the machine-readable version of their company before investor-side software does it for them.
+Every bundle has two first-class surfaces: a human-readable room for people and agent-readable files for AI workflows.
+
+The core idea is simple: founders should control both versions of the fundraising read before investor-side software defines the machine-readable company for them.
 
 ## Why This Exists
 
@@ -22,7 +24,7 @@ The old package was built for a person opening files one by one:
 
 That is not enough when the company is also being read by agents.
 
-A normal data room stores files. A Perspective Room packages the fundraising read: the company story, round context, materials, claim status, access boundaries, and version signals.
+A normal data room stores files. A Perspective Room packages the fundraising read for humans and agents: the company story, round context, materials, claim status, access boundaries, and version signals.
 
 It does not do the investor's work. It makes the founder's package legible to the humans and agents already doing it.
 
@@ -37,7 +39,7 @@ room/
   materials/
 ```
 
-`index.html` is the human-readable room.
+`index.html` is the human-readable room. It is the surface a founder can host or share with investors, advisors, and collaborators.
 
 `room.json` is canonical. It is the structured, agent-readable room.
 
