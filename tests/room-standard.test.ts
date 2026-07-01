@@ -158,6 +158,18 @@ describe('Perspective Room Standard', () => {
     expect(html).toContain('href="./materials.json"')
   })
 
+  it('renders included material links without linking gated materials', () => {
+    const room = readJson<PerspectiveRoom>('examples/full-seed-room/room.json')
+
+    const html = renderRoomHtml(room)
+
+    expect(html).toContain('href="materials/northstar-seed-deck.md"')
+    expect(html).toContain('included in hosted room')
+    expect(html).toContain('external access required')
+    expect(html).toContain('Request access from the founder.')
+    expect(html).not.toContain('href="northstar-model.xlsx"')
+  })
+
   it('keeps agent-readiness eval fixtures well formed', () => {
     const casesDir = join(process.cwd(), 'evals/agent-readiness/cases')
     const cases = readdirSync(casesDir).filter((file) => file.endsWith('.json'))

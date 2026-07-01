@@ -47,7 +47,7 @@ room/
 
 `materials.json` is the material manifest.
 
-`materials/` is optional. It contains only files the founder chooses to include in the portable bundle.
+`materials/` is optional. It contains only files the founder chooses to include in the portable bundle. When the room is self-hosted, included materials should be accessible from the hosted room and linked from `index.html`; gated materials should be listed in `materials.json` but not copied into `materials/`.
 
 ## What This Is Not
 

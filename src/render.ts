@@ -206,11 +206,18 @@ function renderClaimHtml(claim: NonNullable<PerspectiveRoom['claims']>[number]) 
 
 function renderMaterialHtml(material: RoomMaterial) {
   const href = material.local_path || material.download_url
+  const canOpen = Boolean(material.included_in_bundle && href)
+  const accessLabel = material.included_in_bundle
+    ? 'included in hosted room'
+    : material.external_access_required
+      ? 'external access required'
+      : 'metadata only'
   return `<article class="row">
   <h3>${escapeHtml(material.display_name)}</h3>
-  <p class="meta">${escapeHtml([material.material_kind, material.version_label, material.included_in_bundle ? 'included' : 'metadata only'].filter(Boolean).join(' · '))}</p>
+  <p class="meta">${escapeHtml([material.material_kind, material.version_label, accessLabel].filter(Boolean).join(' · '))}</p>
   ${material.description ? `<p>${escapeHtml(material.description)}</p>` : ''}
-  ${href ? `<p><a href="${escapeAttribute(href)}">${escapeHtml(material.filename || 'Open material')}</a></p>` : ''}
+  ${canOpen ? `<p><a href="${escapeAttribute(href)}">${escapeHtml(material.filename || 'Open material')}</a></p>` : ''}
+  ${!canOpen && material.external_access_required ? '<p class="meta">Not included in this hosted bundle. Request access from the founder.</p>' : ''}
 </article>`
 }
 

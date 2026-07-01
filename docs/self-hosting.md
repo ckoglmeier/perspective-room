@@ -36,6 +36,8 @@ materials/
   pilot-summary.pdf
 ```
 
+When materials are included, link to them from `index.html` and list them in `materials.json`. The hosted folder is the room: the human page, the agent-readable files, the manifest, and any included source files.
+
 If a material requires approval, an NDA, identity capture, revocation, or viewer tracking, do not include the file in `materials/`. List it in `materials.json` and set:
 
 ```json
