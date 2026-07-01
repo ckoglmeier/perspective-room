@@ -121,6 +121,63 @@ Install the package directly from the public repository:
 npm install github:ckoglmeier/perspective-room
 ```
 
+## Quickstart
+
+Clone the repo and run the standard checks:
+
+```bash
+git clone https://github.com/ckoglmeier/perspective-room.git
+cd perspective-room
+npm install
+npm run verify
+```
+
+Start with the examples:
+
+- `examples/minimal/` shows the smallest valid room.
+- `examples/full-seed-room/` shows a more realistic seed-stage fundraising bundle.
+
+Open the human-readable room:
+
+```bash
+open examples/full-seed-room/index.html
+```
+
+Then compare the agent-readable files:
+
+- `examples/full-seed-room/room.json` is the canonical structured room.
+- `examples/full-seed-room/agent.md` is the text-first handoff.
+- `examples/full-seed-room/materials.json` is the material manifest.
+
+Validate and render the example bundle:
+
+```bash
+npm run build
+node --input-type=module -e "
+import { readFileSync } from 'node:fs'
+import { buildRoomBundle, validatePerspectiveRoom } from './dist/index.js'
+
+const room = JSON.parse(readFileSync('examples/full-seed-room/room.json', 'utf8'))
+const validation = validatePerspectiveRoom(room)
+
+if (!validation.ok) {
+  throw new Error(validation.errors.join('\n'))
+}
+
+const bundle = buildRoomBundle(room)
+console.log(bundle.files.map((file) => file.path).join('\n'))
+"
+```
+
+Expected output:
+
+```text
+room.json
+materials.json
+agent.md
+index.html
+```
+
 ## Package Usage
 
 ```ts
