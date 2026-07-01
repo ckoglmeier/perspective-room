@@ -137,6 +137,8 @@ Start with the examples:
 - `examples/minimal/` shows the smallest valid room.
 - `examples/full-seed-room/` shows a more realistic seed-stage fundraising bundle.
 
+For more detail, see [Examples](examples/README.md).
+
 Open the human-readable room:
 
 ```bash
