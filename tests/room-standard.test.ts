@@ -137,7 +137,7 @@ describe('Perspective Room Standard', () => {
     expect(files.get('materials.json')).toContain('perspective_room_materials.v1')
   })
 
-  it('renders agent instructions that preserve trust distinctions', () => {
+  it('renders agent instructions that preserve trust and boundary distinctions', () => {
     const room = readJson<PerspectiveRoom>('examples/full-seed-room/room.json')
 
     const markdown = renderAgentMarkdown(room)
@@ -145,7 +145,10 @@ describe('Perspective Room Standard', () => {
     expect(markdown).toContain('Check authored_by, status, and sources before relying on a claim.')
     expect(markdown).toContain('Do not flatten needs_source and source_linked claims')
     expect(markdown).toContain('External access required: true')
+    expect(markdown).toContain('Diligence performed: false')
+    expect(markdown).toContain('Gated materials reviewed: false')
     expect(markdown).toContain('"status": "needs_source"')
+    expect(markdown).not.toContain('Risk:')
   })
 
   it('renders HTML links to the agent-readable artifacts', () => {
@@ -168,6 +171,7 @@ describe('Perspective Room Standard', () => {
     expect(html).toContain('external access required')
     expect(html).toContain('Request access from the founder.')
     expect(html).not.toContain('href="northstar-model.xlsx"')
+    expect(html).not.toContain('Risk:')
   })
 
   it('keeps agent-readiness eval fixtures well formed', () => {

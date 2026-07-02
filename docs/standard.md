@@ -74,6 +74,10 @@ A static bundle is portable. It is not permissioned.
 
 Static bundles can be hosted on GitHub Pages, S3, Netlify, Vercel, Cloudflare Pages, or a local file server. Included files are accessible to anyone with the ZIP or hosted bundle. If a file requires identity capture, NDA, approval, revocation, or viewer tracking, leave it out of `materials/` and mark it `external_access_required`.
 
+## Boundary Fields
+
+Rooms should preserve `boundaries` so agents do not overstate what happened. Founder-published rooms should normally set `claims_are_founder_statements` to true, `diligence_performed` to false, and `gated_materials_reviewed` to false unless a consuming workflow has actually reviewed gated files.
+
 ## Bundle Modes
 
 `metadata_only` includes the AI-native fundraising artifacts and material metadata but no source files. Use it when the founder wants agent-readable context without redistributing sensitive documents.

@@ -28,7 +28,6 @@ export type RoomTrustState = {
 export type RoomClaim = RoomTrustState & {
   id?: string
   claim: string
-  risk?: 'low' | 'medium' | 'high'
   evidence?: string
 }
 
@@ -51,7 +50,7 @@ export type RoomMaterial = {
   included_in_bundle?: boolean
   listed_in_manifest?: boolean
   local_path?: string
-  download_url?: string
+  download_url?: string | null
   external_access_required?: boolean
   sensitive?: boolean
 }
@@ -64,6 +63,12 @@ export type RoomFounder = {
   linkedin_url?: string
   short_bio?: string
   founder_market_fit?: string
+}
+
+export type RoomBoundaries = {
+  claims_are_founder_statements?: boolean
+  diligence_performed?: boolean
+  gated_materials_reviewed?: boolean
 }
 
 export type PerspectiveRoom = {
@@ -94,6 +99,7 @@ export type PerspectiveRoom = {
   claims?: RoomClaim[]
   materials?: RoomMaterial[]
   founders?: RoomFounder[]
+  boundaries?: RoomBoundaries
   links?: {
     human_url?: string
     agent_url?: string

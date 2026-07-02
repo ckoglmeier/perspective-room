@@ -24,7 +24,6 @@
       "claim": "Three pilot customers have completed paid inspections.",
       "authored_by": "founder",
       "status": "needs_source",
-      "risk": "medium",
       "evidence": "Founder says pilots are complete; source contracts are not included in this example."
     }
   ],
@@ -38,5 +37,10 @@
       "included_in_bundle": false,
       "external_access_required": true
     }
-  ]
+  ],
+  "boundaries": {
+    "claims_are_founder_statements": true,
+    "diligence_performed": false,
+    "gated_materials_reviewed": false
+  }
 }

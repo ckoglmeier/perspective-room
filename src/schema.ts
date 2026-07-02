@@ -33,7 +33,6 @@ export const perspectiveRoomSchema = {
             required: ['claim'],
             properties: {
               claim: { type: 'string', minLength: 1 },
-              risk: { enum: ['low', 'medium', 'high'] },
               evidence: { type: 'string' },
             },
           },
@@ -53,10 +52,19 @@ export const perspectiveRoomSchema = {
           included_in_bundle: { type: 'boolean' },
           listed_in_manifest: { type: 'boolean' },
           local_path: { type: 'string' },
-          download_url: { type: 'string' },
+          download_url: { type: ['string', 'null'] },
           external_access_required: { type: 'boolean' },
           sensitive: { type: 'boolean' },
         },
+      },
+    },
+    boundaries: {
+      type: 'object',
+      additionalProperties: true,
+      properties: {
+        claims_are_founder_statements: { type: 'boolean' },
+        diligence_performed: { type: 'boolean' },
+        gated_materials_reviewed: { type: 'boolean' },
       },
     },
   },

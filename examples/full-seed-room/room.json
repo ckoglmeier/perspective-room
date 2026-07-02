@@ -31,7 +31,6 @@
       "claim": "Three pilot customers have completed paid inspections.",
       "authored_by": "founder",
       "status": "source_linked",
-      "risk": "low",
       "evidence": "The seed deck and pilot summary both list three completed paid inspections.",
       "sources": [
         { "material_id": "seed-deck", "page": "7", "note": "Pilot customer summary" },
@@ -43,7 +42,6 @@
       "claim": "Inspection data can expand into a maintenance workflow platform.",
       "authored_by": "founder",
       "status": "needs_source",
-      "risk": "medium",
       "evidence": "Founder hypothesis based on customer interviews; source notes are not included."
     },
     {
@@ -51,7 +49,6 @@
       "claim": "Hardware gross margin reached 42 percent in the March model.",
       "authored_by": "founder",
       "status": "outdated",
-      "risk": "high",
       "evidence": "The March model has been superseded by the June model."
     }
   ],
@@ -117,5 +114,10 @@
       "sensitive": true
     }
   ],
+  "boundaries": {
+    "claims_are_founder_statements": true,
+    "diligence_performed": false,
+    "gated_materials_reviewed": false
+  },
   "self_hosting_notice": "This static bundle includes public-safe materials only. Gated model files are listed in the manifest and require separate access."
 }

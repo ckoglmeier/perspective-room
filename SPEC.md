@@ -46,6 +46,7 @@ A useful room should include:
 - `narrative`
 - `claims`
 - `materials`
+- `boundaries`
 - `self_hosting_notice`
 
 ## Bundle Modes
@@ -111,6 +112,16 @@ If `external_access_required` is true, consumers must not imply the file was rev
 If `sensitive` is true, consumers must not redistribute the material without founder permission.
 
 If `included_in_bundle` is false, the material may exist but is not part of the portable bundle.
+
+## Boundary Semantics
+
+Boundary fields make the room safer for downstream agents:
+
+- `claims_are_founder_statements`: should be true unless another workflow explicitly changes authorship
+- `diligence_performed`: should be false for founder-published rooms
+- `gated_materials_reviewed`: should be false unless gated files were actually reviewed by the consuming workflow
+
+These fields are not a substitute for investor diligence. They prevent agents from implying a stronger review than the room actually represents.
 
 ## What This Standard Does Not Define
 
@@ -180,7 +191,12 @@ The standard does not define:
       "external_access_required": true,
       "sensitive": true
     }
-  ]
+  ],
+  "boundaries": {
+    "claims_are_founder_statements": true,
+    "diligence_performed": false,
+    "gated_materials_reviewed": false
+  }
 }
 ```
 

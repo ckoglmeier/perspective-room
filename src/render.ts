@@ -46,6 +46,7 @@ export function renderAgentMarkdown(room: PerspectiveRoom) {
     '- Check authored_by, status, and sources before relying on a claim.',
     '- Do not flatten needs_source and source_linked claims into the same confidence level.',
     '- If a material is sensitive or external_access_required, do not assume it can be redistributed.',
+    '- If download_url is null or absent, treat the material as metadata only.',
     '',
     '## Company',
     '',
@@ -74,6 +75,12 @@ export function renderAgentMarkdown(room: PerspectiveRoom) {
     '## Materials',
     '',
     ...materialLines(room.materials ?? []),
+    '',
+    '## Boundaries',
+    '',
+    `- Claims are founder statements: ${String(room.boundaries?.claims_are_founder_statements ?? true)}`,
+    `- Diligence performed: ${String(room.boundaries?.diligence_performed ?? false)}`,
+    `- Gated materials reviewed: ${String(room.boundaries?.gated_materials_reviewed ?? false)}`,
     '',
     '## Self-Hosting Notice',
     '',
@@ -149,6 +156,11 @@ export function renderRoomHtml(room: PerspectiveRoom) {
     </section>
 
     <section>
+      <h2>Boundaries</h2>
+      <p class="meta">Claims are founder statements: ${escapeHtml(String(room.boundaries?.claims_are_founder_statements ?? true))} · Diligence performed: ${escapeHtml(String(room.boundaries?.diligence_performed ?? false))} · Gated materials reviewed: ${escapeHtml(String(room.boundaries?.gated_materials_reviewed ?? false))}</p>
+    </section>
+
+    <section>
       <h2>Agent Files</h2>
       <p><a href="./room.json">room.json</a> · <a href="./agent.md">agent.md</a> · <a href="./materials.json">materials.json</a></p>
     </section>
@@ -171,7 +183,6 @@ function claimLines(room: PerspectiveRoom) {
     '',
     `- Authored by: ${claim.authored_by}`,
     `- Status: ${claim.status}`,
-    `- Risk: ${claim.risk || 'not_provided'}`,
     `- Evidence: ${claim.evidence || 'Not provided'}`,
     `- Sources: ${sourceSummary(claim.sources)}`,
     '',
@@ -198,7 +209,7 @@ function materialLines(materials: RoomMaterial[]) {
 function renderClaimHtml(claim: NonNullable<PerspectiveRoom['claims']>[number]) {
   return `<article class="row">
   <h3>${escapeHtml(claim.claim)}</h3>
-  <p class="meta">Authored by: ${escapeHtml(claim.authored_by)} · Status: ${escapeHtml(claim.status)} · Risk: ${escapeHtml(claim.risk || 'not provided')}</p>
+  <p class="meta">Authored by: ${escapeHtml(claim.authored_by)} · Status: ${escapeHtml(claim.status)}</p>
   ${claim.evidence ? `<p>${escapeHtml(claim.evidence)}</p>` : ''}
   <p class="meta">Sources: ${escapeHtml(sourceSummary(claim.sources))}</p>
 </article>`

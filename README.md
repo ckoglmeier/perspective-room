@@ -211,7 +211,6 @@ const room: PerspectiveRoom = {
       claim: 'Acme has three paid pilots.',
       authored_by: 'founder',
       status: 'needs_source',
-      risk: 'medium',
     },
   ],
 }
