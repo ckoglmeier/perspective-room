@@ -1,8 +1,8 @@
 # Changelog
 
-## v0.1.0
+## v1.0.0
 
-Initial release of Perspective Room Standard.
+Initial public release of Perspective Room Standard.
 
 Includes:
 

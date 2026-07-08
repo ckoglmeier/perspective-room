@@ -1,4 +1,4 @@
-# Perspective Room Standard v0.1
+# Perspective Room Standard v1.0
 
 This document is the normative specification for `perspective_room.v1`.
 

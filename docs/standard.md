@@ -1,4 +1,4 @@
-# Perspective Room Standard v0.1
+# Perspective Room Standard v1.0
 
 For the normative contract, see [`SPEC.md`](../SPEC.md). This guide explains the standard in operational terms.
 

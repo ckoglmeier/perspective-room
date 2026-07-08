@@ -16,7 +16,7 @@ Use this checklist when making the repository public and announcing the standard
 - Set repository description: `Open standard for AI-native fundraising bundles.`
 - Set repository topics: `fundraising`, `data-room`, `ai-native`, `agents`, `startup`, `venture-capital`.
 - Make the repository public.
-- Refresh `v0.1.0` so it points at the launch commit.
+- Create `v1.0.0` so it points at the launch commit.
 - Publish release notes from `CHANGELOG.md`.
 
 ## Announcement Check
